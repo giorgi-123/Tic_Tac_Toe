@@ -226,6 +226,10 @@ def button_click(cube):
         messagebox.showerror(title="Error", message="This box is already filled !")
 
 
+def Close_app():
+    root.quit()
+
+
 root = Tk()
 
 cube_1 = Button(
@@ -280,5 +284,9 @@ restart_button.grid(row=6, column=1)
 
 reset_score_button = ttk.Button(root, text="Reset Score", width=10, command=reset_score)
 reset_score_button.grid(row=7, column=1, pady=5)
+
+close_button = ttk.Button(root, text="Quit", width=10, command=Close_app)
+close_button.grid(row=8, column=1)
+
 
 root.mainloop()
