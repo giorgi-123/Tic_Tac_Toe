@@ -1,10 +1,35 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+import time
 
 played = True
 x_points = 0
 o_points = 0
+
+
+def disable_buttons():
+    cube_1["state"] = DISABLED
+    cube_2["state"] = DISABLED
+    cube_3["state"] = DISABLED
+    cube_4["state"] = DISABLED
+    cube_5["state"] = DISABLED
+    cube_6["state"] = DISABLED
+    cube_7["state"] = DISABLED
+    cube_8["state"] = DISABLED
+    cube_9["state"] = DISABLED
+
+
+def enable_buttons():
+    cube_1["state"] = NORMAL
+    cube_2["state"] = NORMAL
+    cube_3["state"] = NORMAL
+    cube_4["state"] = NORMAL
+    cube_5["state"] = NORMAL
+    cube_6["state"] = NORMAL
+    cube_7["state"] = NORMAL
+    cube_8["state"] = NORMAL
+    cube_9["state"] = NORMAL
 
 
 def start_over():
@@ -27,6 +52,7 @@ def start_over():
     cube_9["text"] = " "
     cube_9.config(bg="white")
     label_for_result["text"] = ""
+    enable_buttons()
 
 
 def reset_score():
@@ -80,6 +106,7 @@ def winner_check():
         winner = True
         winner_player = "X"
         x_points += 1
+        disable_buttons()
     elif cube_1["text"] == "X" and cube_5["text"] == "X" and cube_9["text"] == "X":
         cube_1.config(bg="red")
         cube_5.config(bg="red")
@@ -88,6 +115,7 @@ def winner_check():
         winner = True
         winner_player = "X"
         x_points += 1
+        disable_buttons()
     elif cube_1["text"] == "X" and cube_4["text"] == "X" and cube_7["text"] == "X":
         cube_1.config(bg="red")
         cube_4.config(bg="red")
@@ -96,6 +124,7 @@ def winner_check():
         winner = True
         winner_player = "X"
         x_points += 1
+        disable_buttons()
     elif cube_2["text"] == "X" and cube_5["text"] == "X" and cube_8["text"] == "X":
         cube_2.config(bg="red")
         cube_5.config(bg="red")
@@ -104,6 +133,7 @@ def winner_check():
         winner = True
         winner_player = "X"
         x_points += 1
+        disable_buttons()
     elif cube_3["text"] == "X" and cube_6["text"] == "X" and cube_9["text"] == "X":
         cube_3.config(bg="red")
         cube_6.config(bg="red")
@@ -112,6 +142,7 @@ def winner_check():
         winner = True
         winner_player = "X"
         x_points += 1
+        disable_buttons()
     elif cube_4["text"] == "X" and cube_5["text"] == "X" and cube_6["text"] == "X":
         cube_4.config(bg="red")
         cube_5.config(bg="red")
@@ -120,6 +151,7 @@ def winner_check():
         winner = True
         winner_player = "X"
         x_points += 1
+        disable_buttons()
     elif cube_7["text"] == "X" and cube_8["text"] == "X" and cube_9["text"] == "X":
         cube_7.config(bg="red")
         cube_8.config(bg="red")
@@ -128,6 +160,7 @@ def winner_check():
         winner = True
         winner_player = "X"
         x_points += 1
+        disable_buttons()
     elif cube_3["text"] == "X" and cube_5["text"] == "X" and cube_7["text"] == "X":
         cube_3.config(bg="red")
         cube_5.config(bg="red")
@@ -136,6 +169,7 @@ def winner_check():
         winner = True
         winner_player = "X"
         x_points += 1
+        disable_buttons()
     elif cube_1["text"] == "O" and cube_2["text"] == "O" and cube_3["text"] == "O":
         cube_1.config(bg="red")
         cube_2.config(bg="red")
@@ -144,6 +178,7 @@ def winner_check():
         winner = True
         winner_player = "O"
         o_points += 1
+        disable_buttons()
     elif cube_1["text"] == "O" and cube_5["text"] == "O" and cube_9["text"] == "O":
         cube_1.config(bg="red")
         cube_5.config(bg="red")
@@ -152,6 +187,7 @@ def winner_check():
         winner = True
         winner_player = "O"
         o_points += 1
+        disable_buttons()
     elif cube_1["text"] == "O" and cube_4["text"] == "O" and cube_7["text"] == "O":
         cube_1.config(bg="red")
         cube_4.config(bg="red")
@@ -160,6 +196,7 @@ def winner_check():
         winner = True
         winner_player = "O"
         o_points += 1
+        disable_buttons()
     elif cube_2["text"] == "O" and cube_5["text"] == "O" and cube_8["text"] == "O":
         cube_2.config(bg="red")
         cube_5.config(bg="red")
@@ -168,6 +205,7 @@ def winner_check():
         winner = True
         winner_player = "O"
         o_points += 1
+        disable_buttons()
     elif cube_3["text"] == "O" and cube_6["text"] == "O" and cube_9["text"] == "O":
         cube_3.config(bg="red")
         cube_6.config(bg="red")
@@ -176,6 +214,7 @@ def winner_check():
         winner = True
         winner_player = "O"
         o_points += 1
+        disable_buttons()
     elif cube_4["text"] == "O" and cube_5["text"] == "O" and cube_6["text"] == "O":
         cube_4.config(bg="red")
         cube_5.config(bg="red")
@@ -184,6 +223,7 @@ def winner_check():
         winner = True
         winner_player = "O"
         o_points += 1
+        disable_buttons()
     elif cube_7["text"] == "O" and cube_8["text"] == "O" and cube_9["text"] == "O":
         cube_7.config(bg="red")
         cube_8.config(bg="red")
@@ -192,6 +232,7 @@ def winner_check():
         winner = True
         winner_player = "O"
         o_points += 1
+        disable_buttons()
     elif cube_3["text"] == "O" and cube_5["text"] == "O" and cube_7["text"] == "O":
         cube_3.config(bg="red")
         cube_5.config(bg="red")
@@ -200,6 +241,7 @@ def winner_check():
         winner = True
         winner_player = "O"
         o_points += 1
+        disable_buttons()
     elif game_in_progress == False:
         label_for_result["text"] = "Draw !"
 
@@ -231,33 +273,80 @@ def Close_app():
 
 
 root = Tk()
+root.overrideredirect(True)
+root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
 
 cube_1 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_1)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_1),
 )
 cube_2 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_2)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_2),
 )
 cube_3 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_3)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_3),
 )
 cube_4 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_4)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_4),
 )
 cube_5 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_5)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_5),
 )
 cube_6 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_6)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_6),
 )
 cube_7 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_7)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_7),
 )
 cube_8 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_8)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_8),
 )
 cube_9 = Button(
-    root, text=" ", width=30, height=10, command=lambda: button_click(cube_9)
+    root,
+    text=" ",
+    width=50,
+    bg="white",
+    height=10,
+    command=lambda: button_click(cube_9),
 )
 
 cube_1.grid(row=0, column=0)
@@ -271,19 +360,19 @@ cube_8.grid(row=2, column=1)
 cube_9.grid(row=2, column=2)
 
 label_for_result = Label(root, font=("arial", 20))
-label_for_result.grid(row=3, column=1, pady=5)
+label_for_result.grid(row=3, column=1)
 
 label_for_score = Label(root, text="Score", font=("arial", 20))
 label_for_score.grid(row=4, column=1)
 
 players_scores = Label(root, text="0 - 0", font=("arial", 20))
-players_scores.grid(row=5, column=1, pady=10)
+players_scores.grid(row=5, column=1)
 
 restart_button = ttk.Button(root, text="Start Again", width=10, command=start_over)
 restart_button.grid(row=6, column=1)
 
 reset_score_button = ttk.Button(root, text="Reset Score", width=10, command=reset_score)
-reset_score_button.grid(row=7, column=1, pady=5)
+reset_score_button.grid(row=7, column=1)
 
 close_button = ttk.Button(root, text="Quit", width=10, command=Close_app)
 close_button.grid(row=8, column=1)
